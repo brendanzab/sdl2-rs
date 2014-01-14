@@ -22,6 +22,7 @@
 use ffi::stdinc::Uint32;
 
 pub mod ffi;
+pub mod video;
 
 #[repr(C)]
 pub enum InitFlag {

@@ -28,22 +28,20 @@ pub struct SDL_DisplayMode {
 
 pub struct SDL_Window;
 
-#[repr(C)]
-pub enum SDL_WindowFlags {
-    SDL_WINDOW_FULLSCREEN           = 0x00000001,
-    SDL_WINDOW_OPENGL               = 0x00000002,
-    SDL_WINDOW_SHOWN                = 0x00000004,
-    SDL_WINDOW_HIDDEN               = 0x00000008,
-    SDL_WINDOW_BORDERLESS           = 0x00000010,
-    SDL_WINDOW_RESIZABLE            = 0x00000020,
-    SDL_WINDOW_MINIMIZED            = 0x00000040,
-    SDL_WINDOW_MAXIMIZED            = 0x00000080,
-    SDL_WINDOW_INPUT_GRABBED        = 0x00000100,
-    SDL_WINDOW_INPUT_FOCUS          = 0x00000200,
-    SDL_WINDOW_MOUSE_FOCUS          = 0x00000400,
-    SDL_WINDOW_FULLSCREEN_DESKTOP   = 0x00000001 | 0x00001000, // (SDL_WINDOW_FULLSCREEN | 0x00001000),
-    SDL_WINDOW_FOREIGN              = 0x00000800,
-}
+
+pub static SDL_WINDOW_FULLSCREEN:           Uint32 = 0x00000001;
+pub static  SDL_WINDOW_OPENGL :           Uint32 = 0x00000002;
+pub static  SDL_WINDOW_SHOWN :           Uint32 = 0x00000004;
+pub static  SDL_WINDOW_HIDDEN :           Uint32 = 0x00000008;
+pub static  SDL_WINDOW_BORDERLESS :           Uint32 = 0x00000010;
+pub static  SDL_WINDOW_RESIZABLE :           Uint32 = 0x00000020;
+pub static  SDL_WINDOW_MINIMIZED :           Uint32 = 0x00000040;
+pub static  SDL_WINDOW_MAXIMIZED:           Uint32 = 0x00000080;
+pub static   SDL_WINDOW_INPUT_GRABBED:           Uint32 = 0x00000100;
+pub static  SDL_WINDOW_INPUT_FOCUS :           Uint32 = 0x00000200;
+pub static  SDL_WINDOW_MOUSE_FOCUS :           Uint32 = 0x00000400;
+pub static  SDL_WINDOW_FULLSCREEN_DESKTOP :           Uint32 = 0x00000001 | 0x00001000; // (SDL_WINDOW_FULLSCREEN | 0x00001000),
+pub static  SDL_WINDOW_FOREIGN :           Uint32 = 0x00000800;
 
 pub static SDL_WINDOWPOS_UNDEFINED_MASK: c_int = 0x1FFF0000;
 macro_rules! SDL_WINDOWPOS_UNDEFINED_DISPLAY(($x:expr) => (SDL_WINDOWPOS_UNDEFINED_MASK | $x))
