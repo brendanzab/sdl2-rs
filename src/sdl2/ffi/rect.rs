@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-use ffi::stdinc::{SDL_bool, SDL_TRUE, SDL_FALSE};
+use ffi::stdinc::SDL_bool;
 use std::libc::c_int;
 
 // SDL_rect.h
@@ -28,7 +28,10 @@ pub struct SDL_Rect {
     w: c_int, h: c_int,
 }
 
-#[inline]
+/*
+removed, put in base rect.rs
+
+#[inline] 
 pub fn SDL_RectEmpty(r: &SDL_Rect) -> SDL_bool {
     if (r.w <= 0) || (r.h <= 0) { SDL_TRUE } else { SDL_FALSE }
 }
@@ -37,6 +40,8 @@ pub fn SDL_RectEmpty(r: &SDL_Rect) -> SDL_bool {
 pub fn SDL_RectEquals(a: &SDL_Rect, b: &SDL_Rect) -> SDL_bool {
     if *a == *b { SDL_TRUE } else { SDL_FALSE }
 }
+
+*/
 
 extern "C" {
     pub fn SDL_HasIntersection(A: *SDL_Rect, B: *SDL_Rect) -> SDL_bool;
